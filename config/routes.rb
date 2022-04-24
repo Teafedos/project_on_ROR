@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-get "/client", to: "client#authorization"
+    root "client#authorization"
+    
+    get "/authorization", to: "client#authorization"
+    get "/registration", to: "client#registration"
+
+
+    resources :client do
+       collection do
+        get 'datapush'
+       end
+
+       member do
+        
+      end
+    end
 end

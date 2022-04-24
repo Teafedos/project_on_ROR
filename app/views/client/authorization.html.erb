@@ -1,2 +1,24 @@
-<h1>Client#authorization</h1>
-<p>Find me in app/views/client/authorization.html.erb</p>
+
+<head></head>
+<body>
+<h1>Вход</h1>
+
+<%= form_with model: @client, url:authorization_path do |form| %>
+  <div>
+    <%= form.label :Почта %><br>
+    <%= form.text_field :mail %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit value="Вход"%>
+  </div>
+<% end %>
+
+<%= link_to "Регистрация", registration_path%>
+</body>
+
