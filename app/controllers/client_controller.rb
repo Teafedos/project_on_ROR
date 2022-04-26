@@ -4,7 +4,9 @@ class ClientController < ApplicationController
   end
   
   def enter
-     
+    if Client.exists?(mail: params[:client][:mail]) && Client.exists?(password: params[:client][:password_digest])
+      redirect_to testing_path
+    end
   end
 
   
@@ -12,22 +14,33 @@ class ClientController < ApplicationController
   def registration
     @client = Client.new
 
-    @test = Client.where(mail: 'test')
+    
   end
 
   def datapush
-    @client = Client.new(client_params_register)
+    if Client.exists?(mail: params[:client][:mail]) == false
+      
+      @client = Client.new(client_params_register)
 
-    if @client.save
-      redirect_to @client
+      if @client.save
+        redirect_to @client
+      else
+        render :authorization, status: :unprocessable_entity
+      end
     else
-      render :authorization, status: :unprocessable_entity
+      render :registration, status: :unprocessable_entity
     end
+    
+    
+  end
+
+  def testing
+
   end
 
 
   private
   def client_params_register
-    params.require(:client).permit(:login, :password, :mail, :nickname)
+    params.require(:client).permit(:login, :password_digest, :mail, :nickname)
   end
 end

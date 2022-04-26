@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     
     get "/authorization", to: "client#authorization"
     get "/registration", to: "client#registration"
+    get "/testing", to: "client#testing"
 
 
     resources :client do

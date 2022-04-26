@@ -3,15 +3,15 @@
 <body>
 <h1>Вход</h1>
 
-<%= form_with model: @client, url:authorization_path do |form| %>
+<%= form_with model: @client, url:authorization_path, method: :get do |form| %>
   <div>
     <%= form.label :Почта %><br>
     <%= form.text_field :mail %>
   </div>
 
   <div>
-    <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.label :password_digest %><br>
+    <%= form.text_field :password_digest %>
   </div>
 
   <div>
