@@ -5,15 +5,15 @@
 
 <div class="auth">
 <h1>Вход</h1>
-<%= form_with model: @user, url:enter_user_index_path, method: :get do |form| %>
+<%= form_with model: @user, url:enter_users_path, method: :get do |form| %>
   <div class="mb-3">
     <%= form.label :Почта, 'E-mail', :class => 'form-label'%><br>
-    <%= form.text_field  :mail, :value => params[:mail], :class => 'form-control' %>
+    <%= form.text_field  :email, :value => params[:email], :class => 'form-control' %>
   </div>
 
   <div class="mb-3">
     <%= form.label  :Пароль, 'Пароль', :class => 'form-label' %><br>
-    <%= form.text_field  :secretpass, :value => params[:secretpass], :class => 'form-control' %>
+    <%= form.text_field  :password, :value => params[:password], :class => 'form-control' %>
   </div>
 
   <div>
@@ -21,7 +21,7 @@
   </div>
 <% end %>
 
-<%= link_to "Регистрация", registration_path%>
+<%= link_to "Регистрация", new_user_path%>
 </div>
 </body>
 

@@ -2,12 +2,12 @@
 
 one:
   login: MyString
-  secretpass: MyString
-  mail: MyString
-  nickname: MyString
+  password: MyString
+  email: MyString
+  name: MyString
 
 two:
   login: MyString
-  secretpass: MyString
-  mail: MyString
-  nickname: MyString
+  password: MyString
+  email: MyString
+  name: MyString

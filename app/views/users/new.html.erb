@@ -3,7 +3,7 @@
 
 <div class="registr">
 <h1>Регистрация</h1>
-<%= form_with model: @user, url:datapush_user_index_path,  method: :get do |form| %>
+<%= form_with model: @user do |form| %>
   <div class="mb-3">
     <%= form.label value="Логин", :class => 'form-label'%><br>
     <%= form.text_field :login, :class => "form-control" %>
@@ -14,24 +14,24 @@
 
   <div class="mb-3">
     <%= form.label  value="Пароль(минимально 6 символов)", :class => 'form-label'%><br>
-    <%= form.text_field :secretpass, :class => "form-control" %>
-    <% @user.errors.full_messages_for(:secretpass).each do |message| %>
+    <%= form.text_field :password, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div class="mb-3">
     <%= form.label value="Почта", :class => 'form-label' %><br>
-    <%= form.text_field :mail, :class => "form-control" %>
-    <% @user.errors.full_messages_for(:mail).each do |message| %>
+    <%= form.text_field :email, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div class="mb-3">
     <%= form.label value="Имя", :class => 'form-label' %><br>
-    <%= form.text_field :nickname, :class => "form-control" %>
-    <% @user.errors.full_messages_for(:nickname).each do |message| %>
+    <%= form.text_field :name, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -41,6 +41,6 @@
   </div>
 <% end %>
 
-<%= link_to "Уже зарегистрированы?", authorization_path%>
+<%= link_to "Уже зарегистрированы?", authorization_users_path%>
 </div>
 
