@@ -5,7 +5,7 @@
 
 <div class="registr">
 <h1>Регистрация</h1>
-<%= form_with model: @user do |form| %>
+<%= form_with model: @user, url: registration_path, method: :post do |form| %>
   <div class="mb-3">
     <%= form.label value="Логин", :class => 'form-label'%><br>
     <%= form.text_field :login, :class => "form-control" %>
@@ -43,6 +43,6 @@
   </div>
 <% end %>
 
-<%= link_to "Уже зарегистрированы?", authorization_users_path%>
+<%= link_to "Уже зарегистрированы?", authorization_path%>
 </div>
 

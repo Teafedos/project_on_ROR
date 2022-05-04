@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-    root "users#authorization"
+    root "auth#authorization"
 
-    resources :users do
+    get "/authorization", to: "auth#authorization"
+    post "/authorization", to: "auth#authorization"
+    get "/registration", to: "auth#registration"
+    post "/registration", to: "auth#registration"
+    get '/logout', to: 'auth#logout'
+    
+    resources :auth do
        collection do
-        get 'enter', "authorization"
+        
        end
 
        member do
