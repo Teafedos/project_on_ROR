@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-    root "auth#authorization"
-
+    root "home#index"
+  
     get "/authorization", to: "auth#authorization"
     post "/authorization", to: "auth#authorization"
     get "/registration", to: "auth#registration"
