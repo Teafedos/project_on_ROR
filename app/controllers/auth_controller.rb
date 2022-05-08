@@ -5,6 +5,7 @@ class AuthController < ApplicationController
   end
 
   def authorization
+
     if request.get?
       return render :authorization
     end
@@ -39,7 +40,7 @@ class AuthController < ApplicationController
 
   private
   def user_params_register
-    params.require(:user).permit(:login, :password, :email)
+    params.require(:user).permit(:email, :password, :name)
   end
 
 end

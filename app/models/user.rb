@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :login, :password_digest, :email, :name, presence: true
-  validates :login, length: { in: 3..20 }
-  validates :password_digest, length: { in: 8..70 }
-  validates :login, :email, uniqueness: true
+  validates :password_digest, :email, :name, presence: true
+  validates :password, length: { minimum: 6 }, if: -> { new_record? || !password.nil? }
+  validates :email, uniqueness: true
 end
