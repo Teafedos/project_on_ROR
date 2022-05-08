@@ -6,14 +6,4 @@ Rails.application.routes.draw do
     get "/registration", to: "auth#registration"
     post "/registration", to: "auth#registration"
     get '/logout', to: 'auth#logout'
-    
-    resources :auth do
-       collection do
-        
-       end
-
-       member do
-        
-      end
-      end
     end
