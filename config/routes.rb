@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
-    root "client#authorization"
-    
-    get "/authorization", to: "client#authorization"
-    get "/registration", to: "client#registration"
-
-
-    resources :client do
-       collection do
-        get 'datapush'
-       end
-
-       member do
-        
-      end
+    root "home#index"
+  
+    get "/authorization", to: "auth#authorization"
+    post "/authorization", to: "auth#authorization"
+    get "/registration", to: "auth#registration"
+    post "/registration", to: "auth#registration"
+    get '/logout', to: 'auth#logout'
     end
-end

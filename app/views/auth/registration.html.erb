@@ -1,0 +1,36 @@
+<div class="registr">
+<h1>Регистрация</h1>
+<%= form_with model: @user, url: registration_path, method: :post do |form| %>
+ 
+ <div class="mb-3">
+    <%= form.label value="Почта", :class => 'form-label' %><br>
+    <%= form.email_field :email, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label  value="Пароль(минимально 6 символов)", :class => 'form-label'%><br>
+    <%= form.text_field :password, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label value="Имя", :class => 'form-label' %><br>
+    <%= form.text_field :name, :class => "form-control" %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit value="Зарегистрироваться"%>
+  </div>
+<% end %>
+
+<%= link_to "Уже зарегистрированы?", authorization_path%>
+</div>
+

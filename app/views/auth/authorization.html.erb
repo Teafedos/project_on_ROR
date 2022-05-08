@@ -1,0 +1,21 @@
+<div class="auth">
+<h1>Вход</h1>
+<%= form_with model: @user, url: authorization_path, method: :post do |form| %>
+  <div class="mb-3">
+    <%= form.label :Почта, 'E-mail', :class => 'form-label'%><br>
+    <%= form.text_field  :email, :value => params[:email], :class => 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label  :Пароль, 'Пароль', :class => 'form-label' %><br>
+    <%= form.password_field  :password, :value => params[:password], :class => 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit value="Вход"%>
+  </div>
+<% end %>
+
+<%= link_to "Регистрация", registration_path%>
+</div>
+
