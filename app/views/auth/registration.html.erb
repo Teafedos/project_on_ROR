@@ -25,14 +25,6 @@
     <% end %>
   </div>
 
-  <div class="mb-3">
-    <%= form.label value="Имя", :class => 'form-label' %><br>
-    <%= form.text_field :name, :class => "form-control" %>
-    <% @user.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
   <div>
     <%= form.submit value="Зарегистрироваться"%>
   </div>
