@@ -1,0 +1,54 @@
+<div class="top">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Мои клиенты</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои товары</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои заказы</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Интеграция с inSales</a>
+  </li>
+</ul>
+</div>
+
+<div class="clients_all">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Имя</th>
+      <th scope="col">Номер телефона</th>
+      <th scope="col">Email</th>
+      <th scope="col">Количество заказов</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @current_user.clients.each do |form|%>
+      <tr>
+        <td><%= form[:name] %></td>
+        <td><%= form[:phone] %></td>
+        <td><%= form[:email] %></td>
+        <td><%= form[:orders] %></td>
+      </tr>
+    <%end%>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        <% (1...(@pages)).each do |page|%>
+          <li class="page-item"><a class="page-link"><%= page %></a></li>
+        <%end%>
+        </ul>
+     </nav>
+  </tbody>
+</table>
+</div>
+
+
+<%= form_with url: new_client_path, method: :get do |form| %>
+  <%= form.submit "Создать клиента"%>
+<%end%>
+
+
+
