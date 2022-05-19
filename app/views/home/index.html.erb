@@ -1,22 +1,16 @@
 <div class="top">
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <%= link_to 'Мои клиенты', clients_path%>
-    </div>
-    <div class="col-sm">
-      Мои товары
-    </div>
-    <div class="col-sm">
-      Мои заказы
-    </div>
-    <div class="col-sm">
-      Интеграция с inSales
-    </div>
-    
-    <div class="col-sm">
-      Личный кабинет
-    </div>
-  </div>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="<%= clients_path %>">Мои клиенты</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои товары</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои заказы</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Интеграция с inSales</a>
+  </li>
+</ul>
 </div>

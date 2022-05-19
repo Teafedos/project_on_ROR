@@ -8,8 +8,6 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.string :email, null: false
       t.integer :orders, null: false, default: 0
       
-      
-
       t.timestamps
     end
   end
