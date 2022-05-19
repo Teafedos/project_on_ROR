@@ -1,12 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    quantity = (@current_user.clients).length
-
-    if quantity % 25 == 0
-      @pages = (quantity/25)
-    else
-      @pages = (quantity%25) + 1
-    end
+    
   end
 
   def new

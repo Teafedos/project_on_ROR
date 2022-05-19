@@ -14,4 +14,12 @@
  *= require_self
  */
 
- 
+ .top{
+    width: 1800px;
+    font-family: "arial";
+    font-size: 22px;
+}
+
+a{
+    text-decoration: none;
+   } 

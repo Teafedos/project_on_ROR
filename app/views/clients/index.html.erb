@@ -34,13 +34,6 @@
         <td><%= form[:orders] %></td>
       </tr>
     <%end%>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-        <% (1...(@pages)).each do |page|%>
-          <li class="page-item"><a class="page-link"><%= page %></a></li>
-        <%end%>
-        </ul>
-     </nav>
   </tbody>
 </table>
 </div>
@@ -49,6 +42,3 @@
 <%= form_with url: new_client_path, method: :get do |form| %>
   <%= form.submit "Создать клиента"%>
 <%end%>
-
-
-
