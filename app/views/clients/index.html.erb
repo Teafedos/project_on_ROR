@@ -1,0 +1,44 @@
+<div class="top">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Мои клиенты</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои товары</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Мои заказы</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Интеграция с inSales</a>
+  </li>
+</ul>
+</div>
+
+<div class="clients_all">
+<table class="table">
+  <thead>
+    <tr>
+      <th class="th_clients" scope="col">Имя</th>
+      <th class="th_clients" scope="col">Номер телефона</th>
+      <th class="th_clients" scope="col">Email</th>
+      <th class="th_clients" scope="col">Количество заказов</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @current_user.clients.each do |form|%>
+      <tr>
+        <td><%= form[:name] %></td>
+        <td><%= form[:phone] %></td>
+        <td><%= form[:email] %></td>
+        <td><%= form[:orders] %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+</div>
+
+
+<%= form_with url: new_client_path, method: :get do |form| %>
+  <%= form.submit "Создать клиента"%>
+<%end%>
